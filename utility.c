@@ -6,7 +6,7 @@
 /*   By: vkannema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 14:17:26 by vkannema          #+#    #+#             */
-/*   Updated: 2016/11/29 13:17:13 by vkannema         ###   ########.fr       */
+/*   Updated: 2016/11/30 13:00:28 by vkannema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,10 @@ void	ft_print_map(t_map *map)
 
 t_list	*ft_free_list(t_list *list)
 {
-	t_etri *tetri;
 	t_list *next;
 
 	while (list)
 	{
-		tetri = (t_etri *)list->content;
 		next = list->next;
 		ft_memdel((void **)&list);
 		list = next;
@@ -77,9 +75,7 @@ t_list	*ft_free_list(t_list *list)
 void	ft_free_map(t_map *map)
 {
 	int	i;
-	int	j;
 
-	j = 0;
 	i = 0;
 	while (i < map->size)
 	{
